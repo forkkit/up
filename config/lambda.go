@@ -56,7 +56,7 @@ func (l *Lambda) Default() error {
 	}
 
 	if l.Runtime == "" {
-		l.Runtime = "nodejs8.10"
+		l.Runtime = "nodejs10.x"
 	}
 
 	l.Policy = append(l.Policy, defaultPolicy)
@@ -89,5 +89,9 @@ func (l *Lambda) Override(c *Config) {
 
 	if l.VPC != nil {
 		c.Lambda.VPC = l.VPC
+	}
+
+	if l.Runtime != "" {
+		c.Lambda.Runtime = l.Runtime
 	}
 }

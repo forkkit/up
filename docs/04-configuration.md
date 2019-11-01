@@ -65,6 +65,7 @@ The following Lambda-specific settings are available:
 - `role` – IAM role ARN, defaulting to the one Up creates for you
 - `memory` – Function memory in mb (Default `512`, Min `128`, Max `3008`)
 - `policy` – IAM function policy statement(s)
+- `runtime` — Lambda function runtime. (Default `nodejs10.x`)
 - `vpc` - VPC subnets and security groups
 
 For example:
@@ -74,6 +75,7 @@ For example:
   "name": "api",
   "lambda": {
     "memory": 512,
+    "runtime": "nodejs8.10",
     "vpc": {
       "subnets": [
         "subnet-aaaaaaa",
@@ -519,7 +521,6 @@ The following settings are available:
 - `command` – Command run through the shell to start your server (Default `./server`)
   - When `package.json` is detected `npm start` is used
   - When `app.js` is detected `node app.js` is used
-  - When `app.py` is detected `python app.py` is used
 - `timeout` – Timeout in seconds per request (Default `15`, Max `25`)
 - `listen_timeout` – Timeout in seconds Up will wait for your app to boot and listen on `PORT` (Default `15`, Max `25`)
 

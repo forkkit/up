@@ -1,4 +1,22 @@
 
+v1.4.1-pro / 2019-10-23
+=======================
+
+  * fix: add blacklisting of up-env.json so it cannot be .upignored
+
+v1.4.0-pro / 2019-10-23
+=======================
+
+  * change warming functions to nodejs10.x, existing ones will be fine, as AWS doesn't
+  actually stop these functions, they just discontinue updating/creation
+  * Rebase
+
+v1.4.0 / 2019-10-23
+===================
+
+  * refactor nodejs shim to work on node8 or node10
+  * change default runtime to nodejs10.x (potentially breaking change, depends on your application). Closes #784
+
 v1.3.0-pro / 2019-05-30
 =======================
 
